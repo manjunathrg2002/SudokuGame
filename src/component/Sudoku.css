@@ -1,0 +1,126 @@
+/* src/App.css */
+* {
+  box-sizing: border-box; /* Ensures padding does not affect width/height */
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Use a clean sans-serif font */
+  background-color: #F0F8FF; /* Light background color for the whole page */
+  margin: 0;
+  padding: 0;
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF; /* White background for the container */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px;
+  background-color: #5F9EA0;
+}
+
+h1 {
+  font-size: 36px; /* Larger heading */
+  margin-bottom: 20px;
+  color: #333; /* Darker text color for contrast */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0; /* No gap between cells */
+  margin: 10px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  
+}
+
+.row {
+  display: contents; /* Allows rows to be treated as part of the grid */
+}
+
+.cell {
+  border: 2px solid #ccc; /* Light gray border */
+  width: 60px; /* Adjusted width */
+  height: 60px; /* Adjusted height */
+  text-align: center;
+  font-size: 25px; /* Adjusted font size */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+/* Highlighting styles */
+.cell.highlight {
+  background-color: yellow; /* Highlight color for selected cell */
+}
+
+.cell.selected {
+  background-color: lightblue; /* Color for selected box */
+}
+
+.cell.selected-row,
+.cell.selected-col {
+  background-color: rgba(173, 216, 230, 0.5); /* Light blue for row/column highlight */
+}
+
+/* Thick borders for every third cell in the grid (3x3 box separation) */
+
+
+
+
+/* Add bottom thick borders for every third row (for box separation) */
+.row:nth-child(3) .cell {
+  border-bottom: 4px solid black; /* Bottom border for every third row's cells */
+}
+.row:nth-child(6) .cell {
+  border-bottom: 4px solid black; /* Bottom border for every third row's cells */
+}
+/* Add right thick borders for every third column (for box separation) */
+.row .cell:nth-child(3),
+.row .cell:nth-child(6) {
+  border-right: 4px solid black; /* Right border for every third and sixth cell */
+}
+
+/* Button container styles */
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007BFF; /* Bootstrap primary color */
+  color: white; /* White text color */
+  border-radius: 5px; /* Rounded corners for buttons */
+  border: none; /* Remove default border */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions and scaling effect on hover */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+button:disabled {
+  background-color: #ccc; /* Gray color when disabled */
+}
+
+/* Validation message styles */
+.correctText {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.incorrectText {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+  font-size: 25px;
+}
